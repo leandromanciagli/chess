@@ -1,7 +1,9 @@
+let canvas
+let board
+
 function setup() {
-  const canvasSize = 600
-  canvas = createCanvas(canvasSize, canvasSize)
-  initialize()
+  canvas = createCanvas(windowWidth, windowHeight);
+  board = new Board()
 }
 
 function draw() {
