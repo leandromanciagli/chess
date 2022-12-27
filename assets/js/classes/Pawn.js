@@ -7,10 +7,8 @@ class Pawn extends Piece
 
   showPossibleDestinations()
   {
-    this.actualCell.turnOn()
-    if(this.actualCell.adjoiningCells['north'] && !this.actualCell.adjoiningCells['north'].isBusy){
-      console.log(!this.actualCell.adjoiningCells['north'].isBusy);
-      this.actualCell.adjoiningCells['north'].turnOn()
+    if(this.actualCell.getAdjoiningCells()['north'] && !this.actualCell.getAdjoiningCells()['north'].isBusy()){
+      this.actualCell.getAdjoiningCells()['north'].turnOn()
     }
   }
 

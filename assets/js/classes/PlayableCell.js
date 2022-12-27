@@ -1,12 +1,11 @@
 class PlayableCell extends Cell
 {
-  constructor( color, name, row, column, isBusy, size, posX, posY, actualPiece = null )
+  constructor( color, name, row, column, size, posX, posY, actualPiece = null )
   {
-    super(color, name, size, posX, posY, row, column, isBusy)
+    super(color, name, size, posX, posY, row, column)
     this.borderColor
     this.row = row
     this.column = column
-    this.isBusy = isBusy
     this.onFocus = false
     this.adjoiningCells = {}
     this.actualPiece = actualPiece
@@ -34,6 +33,11 @@ class PlayableCell extends Cell
   turnOff()
   {
     this.onFocus = false
+  }
+
+  isBusy()
+  {
+    return this.actualPiece !== null
   }
 
   wasSelected(offsetX, offsetY){
