@@ -1,7 +1,7 @@
 class Pawn extends Piece
 {
-  constructor(image, name, size, initialCell) {
-    super(image, name, size, initialCell)
+  constructor(image, name, size, initialCell, team) {
+    super(image, name, size, initialCell, team)
     this.movedOnce = false
   }
 

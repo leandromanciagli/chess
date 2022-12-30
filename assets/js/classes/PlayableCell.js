@@ -3,7 +3,7 @@ class PlayableCell extends Cell
   constructor( color, name, row, column, size, posX, posY, actualPiece = null )
   {
     super(color, name, size, posX, posY, row, column)
-    this.borderColor
+    this.selectedColor
     this.row = row
     this.column = column
     this.onFocus = false
@@ -14,7 +14,7 @@ class PlayableCell extends Cell
   draw() 
   {
     if (this.onFocus) {
-      stroke(color(this.borderColor))
+      stroke(color(this.selectedColor))
       strokeWeight(6)
     }else{
       noStroke()
@@ -24,15 +24,20 @@ class PlayableCell extends Cell
     square(this.posX, this.posY, this.size)
   }
   
-  turnOn(borderColor = 'orange')
+  turnOn(selectedColor = 'orange')
   {
-    this.borderColor = borderColor
+    this.selectedColor = selectedColor
     this.onFocus = true
   }
 
   turnOff()
   {
     this.onFocus = false
+  }
+
+  isOnFocus()
+  {
+    return this.onFocus
   }
 
   isBusy()
